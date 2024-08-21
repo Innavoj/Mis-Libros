@@ -1,8 +1,11 @@
+import { Box } from "@mui/material";
 
 export default function EditBooksPages() {
-    return (
-        <>
-         <h1>Editar Books</h1>
-        </>
-    )
+  return (
+    <>
+      <Box sx={{ flexGrow: 1,  bgcolor: "background.default", p: 3, textAlign: 'center' }}>
+        <h1>Edit Books Pages</h1>
+      </Box>
+    </>
+  );
 }
