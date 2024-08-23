@@ -7,11 +7,14 @@
   pointer-events: none;
 }
 
-.lista {
-  color:#61dafb
+.boton {
+  color: white;
+  background-color: blueviolet;
+  border-radius: 2px;
 }
-.lista:hover {
-  color: blueviolet;
+.boton:hover {
+  color: rgb(238, 7, 7);
+  background-color: rgb(9, 238, 150);
 }
 
 @media (prefers-reduced-motion: no-preference) {
