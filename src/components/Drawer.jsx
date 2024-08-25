@@ -73,12 +73,6 @@ function ResponsiveDrawer(props) {
             linked: "/misbooks",
             icon: <MenuBookIcon />,
           },
-
-          {
-            title: "Inventory",
-            linked: "/inventario",
-            icon: <InventoryIcon />,
-          },
           {
             title: "Products",
             linked: "/productos",
@@ -117,11 +111,6 @@ function ResponsiveDrawer(props) {
       <Divider />
       <List>
         {[
-          {
-            title: "Contacts",
-            linked: "/contactos",
-            icon: <MailIcon />,
-          },
           {
             title: "About",
             linked: "/about",
