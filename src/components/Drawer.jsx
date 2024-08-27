@@ -251,7 +251,6 @@ function ResponsiveDrawer(props) {
         </Drawer>
         <Drawer
           variant="permanent"
-          
           sx={{
             display: { xs: 'none', sm: 'block' },
             '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: "rgba(67,60,71,1)",
