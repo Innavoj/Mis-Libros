@@ -6,6 +6,50 @@
   height: 40vmin;
   pointer-events: none;
 }
+.vinculo {
+  color: #6229f4;
+ 
+
+}
+.boton {
+  color: white;
+  background-color: #6229f4;
+  border-radius: 10px;
+  width: 100px;
+  height: 35px;
+  margin: 18px;
+}
+.boton:hover {
+  color: rgb(238, 7, 7);
+}
+
+.contenido-1 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5em;
+  margin-left: 15em;
+  padding: 15px;
+  justify-content: space-between;
+}
+.contenido-2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5em;
+  margin-left: 15em;
+  padding: 15px;
+}
+.card {
+  border-radius: 10px;
+  background-color: rgb(188, 233, 210);
+  color: black;
+  height: 200px;
+  width: 200px;
+ 
+  padding: 4px;
+  margin: 10px;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -26,6 +70,41 @@
 
 .App-link {
   color: #61dafb;
+}
+
+@media only screen and (max-width: 430px) {
+
+  .contenido-1 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1em;
+  }
+  .contenido-2 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 1em;
+    margin-left: 5em;
+    padding: 1px;
+  }
+  .card {
+    border-radius: 10px;
+    background-color: rgb(188, 233, 210);
+    color: black;
+    height: 210px;
+    width: 350px;
+    padding: 5px;
+    margin: 5px;
+  }
+  .boton {
+    color: white;
+    background-color: #6229f4;
+    border-radius: 10px;
+    width: 80px;
+    height: 25px;
+    margin: 10px;
+  }
 }
 
 @keyframes App-logo-spin {
