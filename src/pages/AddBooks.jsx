@@ -1,7 +1,7 @@
-import { ArrowBack, Add } from "@mui/icons-material";
-import { Box, Button, IconButton, TextField } from "@mui/material";
+import {  Add } from "@mui/icons-material";
+import { Box, Button,  TextField } from "@mui/material";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+ 
  
 
 export default function AddBooksPages() {
@@ -26,15 +26,6 @@ export default function AddBooksPages() {
           textAlign: "center",
         }}
       >
-        <div>
-          <h1>Add Books Pages</h1>
-          <Link to="/misbooks"  >
-            <IconButton>
-              <ArrowBack />
-            </IconButton>
-            My Books
-          </Link>
-        </div>
         <div>
           <TextField sx={{ m: 2, p: 2 }} placeholder="Book" size="small" value={book} onChange={(e) => setBook(e.target.value)}/>
           <TextField sx={{ m: 2, p: 2 }}  placeholder="Title" size="small" value={title} onChange={(e) => setTitle(e.target.value)}/>

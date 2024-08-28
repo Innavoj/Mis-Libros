@@ -8,9 +8,15 @@
 }
 .vinculo {
   color: #6229f4;
- 
-
 }
+
+.subtitulo {
+    
+    margin: 5em;
+    margin-left: 15em;
+    padding: 15px;
+}
+
 .boton {
   color: white;
   background-color: #6229f4;
@@ -39,6 +45,15 @@
   margin: 5em;
   margin-left: 15em;
   padding: 15px;
+}
+.contenido-3 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 5em;
+  margin-left: 10em;
+  padding: 10px;
+
 }
 .card {
   border-radius: 10px;
