@@ -1,3 +1,3 @@
-export default function Titulo({ texto }) {
-  return <h1>{texto}</h1>;
+export default function Titulo({ texto, color }) {
+  return <h1 style={{color: color}}>{texto}</h1>;
 }

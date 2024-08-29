@@ -5,11 +5,13 @@ import ButtonAction from "../components/ButtonAction";
 import { useState } from "react";
 import AddBook from "../components/AddBook";
 import Titulo from "../components/Titulo";
-import { IconButton } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
 import Parrafo from "../components/Parrafo";
 
-const libros = [
+let nextId = 4;
+
+const initLibros = [
   {
     id: 1,
     title: "The Best Select",
@@ -33,13 +35,6 @@ const libros = [
   },
   {
     id: 4,
-    title: "Fund. Química",
-    img: "/src/assets/img/4.jpg",
-    precio: 90.0,
-    vendido: false,
-  },
-  {
-    id: 5,
     title: "Español y Líteratura",
     img: "/src/assets/img/5.jpg",
     precio: 190.0,
@@ -49,6 +44,11 @@ const libros = [
 
 export default function MisBooksPages() {
   const [open, setOpen] = useState(false);
+  const [book, setBook] = useState("");
+  const [title, setTitle] = useState("");
+  const [precio, setPrecio] = useState(0);
+  const [vendido, setVendido] = useState(false);
+  const [libros, setLibros] = useState(initLibros);
 
   const handleButtonClick = () => {
     setOpen(true);
@@ -58,32 +58,76 @@ export default function MisBooksPages() {
     setOpen(false);
   };
 
+  const handleAddBooks = () => {
+    setLibros([
+      ...libros,
+      { id: nextId++, title: title, img: book, precio: precio, vendido: false },
+    ]);
+    console.log(libros);
+    setTitle('');
+    setBook('');
+    setPrecio('');
+  };
+
   return (
     <>
       <div className="contenido-1">
-        <Titulo texto="Mis Libros" />
-        {open ? 
-        (
+        <Titulo texto="Mis Libros" color="violet" />
+        {open ? (
           <IconButton onClick={handleIconClick} size="small">
-              <ArrowBack />
-              <Parrafo texto="back" />
-            </IconButton>
+            <ArrowBack />
+            <Parrafo texto="back" color="dark" />
+          </IconButton>
         ) : (
           <ButtonAction
-          onClick={handleButtonClick}
-          variant="contained"
-          color="secondary"
-          startIcon={<AddIcon />}
-          texto="Add Book"
-        />
+            onClick={handleButtonClick}
+            variant="contained"
+            color="secondary"
+            startIcon={<AddIcon />}
+            texto="Add Book"
+          />
         )}
-        
       </div>
       {open && (
         <>
-          <AddBook />
+          {/* <AddBook libro={libros} /> */}
           <div className="contenido-1">
-            <ButtonAction variant="outlined" color="success" texto="Agregar" />
+             
+            <TextField
+              sx={{ m: 1, width: '200px'}}
+              label="Imagen of the Book"
+              type="file"
+              placeholder="Book Image"
+              size="small"
+              value={book}
+              onChange={(e) => setBook(e.target.value)}
+            />
+            <TextField
+              sx={{ m: 1, width: '150px' }}
+              label="Title of the Book"
+              type="text"
+              placeholder="Title"
+              size="small"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+            <TextField
+              sx={{ m: 1, width: '150px' }}
+              label="Price of the Book"
+              type="number"
+              placeholder="Precio"
+              size="small"
+              value={precio}
+              onChange={(e) => setPrecio(e.target.value)}
+            />
+          </div>
+          <div className="contenido-1">
+            <ButtonAction
+              onClick={handleAddBooks}
+              variant="outlined"
+              color="success"
+              texto="Agregar"
+            />
           </div>
         </>
       )}
@@ -94,6 +138,7 @@ export default function MisBooksPages() {
             title={item.title}
             img={item.img}
             precio={item.precio}
+            vendido={item.vendido}
           />
         ))}
       </div>

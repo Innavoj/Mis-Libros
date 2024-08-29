@@ -1,3 +1,3 @@
-export default function SubTitulo({ texto }) {
-  return <h4>{texto}</h4>;
+export default function SubTitulo({ texto, color }) {
+  return <h4 style={{color: color}}>{texto}</h4>;
 }

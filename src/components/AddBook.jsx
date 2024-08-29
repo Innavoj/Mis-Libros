@@ -1,18 +1,25 @@
 import { TextField } from "@mui/material";
 import { useState } from "react";
+import ButtonAction from "./ButtonAction";
 
 
 export default function AddBook() {
-  const [book, setBook] = useState("");
-  const [title, setTitle] = useState("");
-  const [precio, setPrecio] = useState(0);
-  const [vendido, setVendido] = useState(false);
+
+
+   const [book, setBook] = useState("");
+   const [title, setTitle] = useState("");
+   const [precio, setPrecio] = useState(0);
+  // const [vendido, setVendido] = useState(false);
+ 
+
+  
 
   return (
     <>
     <div className="contenido-1">
       <TextField
         sx={{ m: 2, p: 2 }}
+        type="file"
         placeholder="Book Image"
         size="small"
         value={book}
@@ -35,7 +42,9 @@ export default function AddBook() {
       />
       
     </div>
-     
+        <div className="contenido-1">
+            <ButtonAction   variant="outlined" color="success" texto="Agregar" />
+        </div>
     </>
   );
 }
