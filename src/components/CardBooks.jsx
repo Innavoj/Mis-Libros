@@ -19,7 +19,8 @@ export default function CardBooks({ title, img, precio, vendido }) {
     <>
       <div className="card">
         
-          <CardMedia image={img} title={title} />
+          {/* <CardMedia image={img} title={title} /> */}
+          <img src={img}  ratio='3 : 6' />
 
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
