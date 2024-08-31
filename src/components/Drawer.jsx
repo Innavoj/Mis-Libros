@@ -118,7 +118,7 @@ function ResponsiveDrawer(props) {
           },
           {
             title: "Logout",
-            linked: "/logout",
+            linked: "/",
             icon: <LogoutIcon />,
           },
         ].map((text) => (
@@ -161,7 +161,7 @@ function ResponsiveDrawer(props) {
   return (
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
-      <AppBar
+      <AppBar className="bar"
         position="fixed"
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
@@ -172,7 +172,7 @@ function ResponsiveDrawer(props) {
       >
         <Toolbar>
           <IconButton
-            color="inherit"
+            color="primary"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
@@ -181,7 +181,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
           
-          <IconButton children={<SearchIcon />} size="large" />
+          <IconButton children={<SearchIcon />} size="large" color="primary"/>
             
           <Grid
             container
@@ -194,7 +194,7 @@ function ResponsiveDrawer(props) {
           > 
               <Stack direction="row" display="flex" alignItems="center" justifyContent="end"  spacing={2}>
                 <IconButton children={<PeopleIcon />} size="large" />
-                <IconButton size="large">
+                <IconButton size="large" >
                   <Badge badgeContent={1} color="error">
                     <ShoppingCartIcon />
                   </Badge>
@@ -214,7 +214,7 @@ function ResponsiveDrawer(props) {
         aria-label="mailbox folders"
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
+        <Drawer 
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -229,7 +229,7 @@ function ResponsiveDrawer(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              backgroundColor: "#12121b",
+              backgroundColor: "rgb(7,2,61)",  // #12121b
               color: "white",
             },
           }}
@@ -237,13 +237,14 @@ function ResponsiveDrawer(props) {
           {drawer}
         </Drawer>
         <Drawer
+           
           variant="permanent"
           sx={{
             display: { xs: "none", sm: "block" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              backgroundColor: "#12121b",
+              backgroundColor: "rgb(7,2,61)",  // #12121b
               color: "white",
             },
           }}

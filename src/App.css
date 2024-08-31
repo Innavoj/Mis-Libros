@@ -59,7 +59,7 @@
   border-radius: 10px;
   background-color: rgb(188, 233, 210);
   color: black;
-  height: 200px;
+  height: 220px;
   width: 200px;
  
   padding: 4px;
@@ -85,6 +85,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.bar {
+  background: rgb(7,2,61);
+  background: linear-gradient(90deg, rgba(7,2,61,1) 0%, rgba(125,16,249,1) 55%, rgba(151,9,245,1) 100%);
 }
 
 @media only screen and (max-width: 430px) {

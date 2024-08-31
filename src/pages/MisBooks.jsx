@@ -14,9 +14,10 @@ let nextId = 4;
 const initLibros = [
   {
     id: 1,
-    title: "The Best Select",
+    title: "El Mejor Libro para leer",
     img: "/src/assets/img/jsi.jpg",
     precio: 20.0,
+    count: 1,
     vendido: true,
   },
   {
@@ -24,13 +25,15 @@ const initLibros = [
     title: "Vida y Obra de M. Brandow",
     img: "/src/assets/img/2.jpg",
     precio: 45.0,
+    count: 1,
     vendido: false,
   },
   {
     id: 3,
-    title: "Operación Condor",
+    title: "Operación Condor US",
     img: "/src/assets/img/3.jpg",
     precio: 50.0,
+    count: 5,
     vendido: false,
   },
   {
@@ -38,15 +41,17 @@ const initLibros = [
     title: "Español y Líteratura",
     img: "/src/assets/img/5.jpg",
     precio: 190.0,
+    count: 2,
     vendido: false,
   },
 ];
 
 export default function MisBooksPages() {
   const [open, setOpen] = useState(false);
-  const [book, setBook] = useState("");
+  const [img, setImg] = useState("");
   const [title, setTitle] = useState("");
   const [precio, setPrecio] = useState(0);
+  const [count, setCount] = useState(0);
   const [vendido, setVendido] = useState(false);
   const [libros, setLibros] = useState(initLibros);
 
@@ -61,18 +66,19 @@ export default function MisBooksPages() {
   const handleAddBooks = () => {
     setLibros([
       ...libros,
-      { id: nextId++, title: title, img: book, precio: precio, vendido: false },
+      { id: nextId++, title: title, img: img, precio: precio, count: count, vendido: vendido },
     ]);
     console.log(libros);
     setTitle('');
-    setBook('');
+    setImg('');
     setPrecio('');
+    setVendido(false);
   };
 
   return (
     <>
       <div className="contenido-1">
-        <Titulo texto="Mis Libros" color="violet" />
+        <Titulo texto="Mis Libros" color="dark" />
         {open ? (
           <IconButton onClick={handleIconClick} size="small">
             <ArrowBack />
@@ -99,8 +105,8 @@ export default function MisBooksPages() {
               type="file"
               placeholder="Book Image"
               size="small"
-              value={book}
-              onChange={(e) => setBook(e.target.value)}
+              value={img}
+              onChange={(e) => setImg(e.target.value)}
             />
             <TextField
               sx={{ m: 1, width: '150px' }}
@@ -138,6 +144,7 @@ export default function MisBooksPages() {
             title={item.title}
             img={item.img}
             precio={item.precio}
+            count={item.count}
             vendido={item.vendido}
           />
         ))}
