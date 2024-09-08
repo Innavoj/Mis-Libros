@@ -2,12 +2,15 @@ import CardBooks from "../components/CardBooks";
 import AddIcon from "@mui/icons-material/Add";
 import "../App.css";
 import ButtonAction from "../components/ButtonAction";
+import ButtonFab from "../components/ButtonFab";
+import ButtonIcono from "../components/ButtonIcono";
 import { useState } from "react";
-import AddBook from "../components/AddBook";
+//import AddBook from "../components/AddBook";
+
 import Titulo from "../components/Titulo";
-import { IconButton, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
-import Parrafo from "../components/Parrafo";
+//import Parrafo from "../components/Parrafo";
 
 let nextId = 4;
 
@@ -66,12 +69,19 @@ export default function MisBooksPages() {
   const handleAddBooks = () => {
     setLibros([
       ...libros,
-      { id: nextId++, title: title, img: img, precio: precio, count: count, vendido: vendido },
+      {
+        id: nextId++,
+        title: title,
+        img: img,
+        precio: precio,
+        count: count,
+        vendido: vendido,
+      },
     ]);
     console.log(libros);
-    setTitle('');
-    setImg('');
-    setPrecio('');
+    setTitle("");
+    setImg("");
+    setPrecio("");
     setVendido(false);
   };
 
@@ -80,17 +90,19 @@ export default function MisBooksPages() {
       <div className="contenido-1">
         <Titulo texto="Mis Libros" color="dark" />
         {open ? (
-          <IconButton onClick={handleIconClick} size="small">
-            <ArrowBack />
-            <Parrafo texto="back" color="dark" />
-          </IconButton>
+          <ButtonIcono
+            onClick={handleIconClick}
+            color="inherit"
+            size="small"
+            startIcon={<ArrowBack />}
+          />
         ) : (
-          <ButtonAction
+          <ButtonFab
             onClick={handleButtonClick}
-            variant="contained"
             color="secondary"
+            size="small"
+            variant="circular"
             startIcon={<AddIcon />}
-            texto="Add Book"
           />
         )}
       </div>
@@ -98,9 +110,8 @@ export default function MisBooksPages() {
         <>
           {/* <AddBook libro={libros} /> */}
           <div className="contenido-1">
-             
             <TextField
-              sx={{ m: 1, width: '200px'}}
+              sx={{ m: 1, width: "200px" }}
               label="Imagen of the Book"
               type="file"
               placeholder="Book Image"
@@ -109,7 +120,7 @@ export default function MisBooksPages() {
               onChange={(e) => setImg(e.target.value)}
             />
             <TextField
-              sx={{ m: 1, width: '150px' }}
+              sx={{ m: 1, width: "150px" }}
               label="Title of the Book"
               type="text"
               placeholder="Title"
@@ -118,7 +129,7 @@ export default function MisBooksPages() {
               onChange={(e) => setTitle(e.target.value)}
             />
             <TextField
-              sx={{ m: 1, width: '150px' }}
+              sx={{ m: 1, width: "150px" }}
               label="Price of the Book"
               type="number"
               placeholder="Precio"

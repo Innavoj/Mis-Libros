@@ -55,15 +55,19 @@
   padding: 10px;
 
 }
-.card {
-  border-radius: 10px;
-  background-color: rgb(188, 233, 210);
-  color: black;
-  height: 220px;
-  width: 200px;
+
  
-  padding: 4px;
-  margin: 10px;
+
+.card {
+  width: 245;
+  height: 225;
+  margin: 2;
+  background-color: "darkgrey";
+  color: "white";
+}
+.card:hover {
+  background-color: #6229f4;
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
